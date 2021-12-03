@@ -1,16 +1,16 @@
 const fs = require('fs')
 const data = fs.readFileSync('./data', 'utf-8').split('\n')
 
-console.log('**************************** Part 1 ****************************')
+const section = (name, data, fn) => {
+    console.log(`**************************** ${name} ****************************`)
+    fn([...data])
+    console.log(`**************************** End of ${name} ****************************`)
+}
 
-(function(data) {
+section('Part 1', data, (data) => {
 
-})(data)
+})
 
-console.log('**************************** Part 2 ****************************')
+section('Part 2', data, (data) => {
 
-(function(data) {
-
-})(data)
-
-console.log('**************************** Fin ****************************')
+})
