@@ -29,16 +29,16 @@ const zeroesAndOnesAtIdx = (ary, idx) => {
     return [ ary.length - ones, ones ]
 }
 
-mostCommonBitAtIdx = (ary, idx) => {
+const mostCommonBitAtIdx = (ary, idx) => {
     const [zeroes, ones] = zeroesAndOnesAtIdx(ary, idx)
     return ones >= zeroes ? '1' : (ones === zeroes ? '1' : '0')
 }
-leastCommonBitAtIdx = (ary, idx) => {
+const leastCommonBitAtIdx = (ary, idx) => {
     const [zeroes, ones] = zeroesAndOnesAtIdx(ary, idx)
     return ones > zeroes ? '0' : (ones === zeroes ? '0' : '1')
 }
 
-narrowByIndex = (ary, fn, idx = 0) => {
+const narrowByIndex = (ary, fn, idx = 0) => {
     if (ary.length === 1 || ary[0][idx] === undefined) return ary
 
     const bit_filter = fn(ary, idx)
