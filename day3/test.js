@@ -1,8 +1,8 @@
 const fs = require('fs')
-
 const data = fs.readFileSync('./data', 'utf-8').split('\n')
 
-// Part 1:
+console.log('**************************** Part 1 ****************************')
+
 const ones = Array(data[0].length).fill(0)
 
 data.forEach((v) => {
@@ -17,12 +17,12 @@ const gamma = parseInt(gammaBin, 2)
 const epsilonBin = ones.map((amt) => amt < dataMedian ? '1' : '0').join('')
 const epsilon = parseInt(epsilonBin, 2)
 
-console.log(`Number of 1 bits: ${ones}`)
-console.log(`Gamma: ${gamma} (${gammaBin}), Epsilon: ${epsilon} (${epsilonBin})`)
+console.log(`Number of 1 bits: ${ones}\n`)
+console.log(`Gamma: ${gamma} (${gammaBin})\nEpsilon: ${epsilon} (${epsilonBin})\n`)
 console.log(`Power consumption: ${gamma * epsilon}`)
 
 
-// Part 2:
+console.log('**************************** Part 2 ****************************')
 
 const zeroesAndOnesAtIdx = (ary, idx) => {
     const ones = ary.reduce((ones, curr) => { return curr[idx] === '1' ? ones + 1 : ones }, 0)
@@ -52,5 +52,7 @@ const CO2RatingBin = narrowByIndex(data, leastCommonBitAtIdx)
 const CO2Rating = parseInt(CO2RatingBin, 2)
 
 console.log(`Oxygen Gen Rating: ${oxygenRating} (${oxygenRatingBin})`)
-console.log(`CO2 Scrubber Rating: ${CO2Rating} (${CO2RatingBin})`)
+console.log(`CO2 Scrubber Rating: ${CO2Rating} (${CO2RatingBin})\n`)
 console.log(`Life Support Rating: ${oxygenRating * CO2Rating}`)
+
+console.log('**************************** Fin ****************************')
