@@ -1,5 +1,7 @@
 const { data } = require('./data.json')
 
+// Part 1
+
 let total = 0
 data.reduce((prev, curr) => {
     if (prev && curr > prev) total++
@@ -8,6 +10,8 @@ data.reduce((prev, curr) => {
 
 console.log(`Total entries: ${data.length}`)
 console.log(`Incrementing entries: ${total}`)
+
+// Part 2
 
 let bonus_total = 0
 let last_sum = null
